@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+  
+{% block content %}
+
+<div id="resultContainer">
+    <p>ID: {{employee.id}}</p>
+    <p>Email: {{employee.email}}</p>
+    <p>Contact: {{employee.contact}}</p>
+</div>
+
+<form id="employeeForm" method="post">
+  {% csrf_token %}
+  <input type="text" name="id" id="idInput">
+  <button type="submit">Gửi</button>
+</form>
+{% load static %}  
+<script src="{% static 'js/test_ajax.js' %}"></script>
+{% endblock content %}
